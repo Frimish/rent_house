@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改房源</title>
+	<link rel="icon" type="image/png" href="./imgs/favicon.png">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./css/houseRent.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script src="./js/template.js"></script>
+	<script src="./js/modifyRent.js"></script>
+	<script src="./js/houseRent.js"></script>
+	<script type="text/html" id="template">
+			
+		<div class="img-item">
+			<img src="">
+			<span class="times">&times;</span>
+		</div>
+
+	</script>
+</head>
+<body>
+	<!-- nav -->
+	<div class="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="row">
+						<div class="col-xs-7"><img src="./imgs/logo.png"></div>
+						<div class="col-xs-5">网博</div>
+					</div>				
+				</div>
+				<div class="col-xs-1"><a href="./index.html">租房</a></div>
+				<div class="col-xs-1 housemana selected">
+					<a href="./houseRent.html">发布房源</a>
+				</div>
+				<div class="col-xs-1"><a href="./rentManage.html">房源管理</a></div>
+				<div class="col-xs-2  col-xs-offset-4">
+					<span class="regi"><a href="#" data-toggle="modal" data-target="#regist"></a></span>
+					<span  class="log"><a href="#" data-toggle="modal" data-target="#login"> 退出</a></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="houseRent">
+			<div class="container">
+				<div class="row title">
+					<div class="col-xs-2 col-xs-offset-5">修改出租房源</div>
+				</div>
+			</div>
+		</div>
+		<div class="container detailInfo">
+			<form  action="" method="post" enctype="multipart/form-data">
+				<!-- community -->
+				<div class="row">
+					<div class="col-xs-1 col-xs-offset-1"><span>*</span>小区名称：</div>
+					<div class="col-xs-3"><input type="text" placeholder="请输入小区名称" id="communityName"></div>
+					<div class="col-xs-1 col-xs-offset-1"><span>*</span>所属板块：</div>
+					<div class="col-xs-1 area">					
+							<ul class="selectarea">
+								<li class="text">区属</li>
+								<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+							</ul>
+							<ul class="dis">
+								<script id="area" type="text/html">
+									{{each sources as i}}
+									<li><a href="#" id="{{i.id}}">{{i.name}}</a></li>
+									{{/each}}
+								</script>
+							</ul>
+					</div>
+					<div class="col-xs-1 bk">		
+							<ul class="bankuai">
+								<li class="text">板块</li>
+								<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+							</ul>
+							<ul class="hid">
+								<script id="ar" type="text/html">
+									{{each source as i}}
+									<li><a href="#" id="{{i.id}}">{{i.name}}</a></li>
+									{{/each}}
+								</script>
+							</ul>
+						
+					</div>
+				</div>
+				<!-- doorplate and renttype -->
+				<div class="row">
+					<div class="col-xs-1  col-xs-offset-1"><span></span><span>楼栋门牌：</span></div>
+					<div class="col-xs-3 doorplate">
+						<input type="text" class="dong"> 栋/号
+						<input type="text" class="danyuan"> 单元
+						<input type="text" class="shi"> 室
+					</div>
+					<div class="col-xs-1  col-xs-offset-1"><span>*</span><span>租赁方式：</span></div>
+					<div class="col-xs-3 rent">
+						<ul class="selecttype">
+							<li class="text">选择租赁方式</li>
+							<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+						</ul>
+						<ul class="renttype">
+							<li><a href="#">合租</a></li>
+							<li><a href="#">整租</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- areas -->
+				<div class="row">
+					<div class="col-xs-1  col-xs-offset-1"><span>*</span><span>户型：</span></div>
+					<div class="col-xs-3 housetype">
+						<input type="text" class="sh"> 室
+						<input type="text" class="ting"> 厅
+						<input type="text" class="wei"> 卫
+					</div>
+					<div class="col-xs-1  col-xs-offset-1"><span>*</span><span>面积：</span></div>
+					<div class="col-xs-3 houseareas">
+						<input type="text" placeholder="建筑面积">平方米
+					</div>
+				</div>
+
+				<!-- price -->
+				<div class="row">
+					<div class="col-xs-1  col-xs-offset-1"><span>*</span><span>租金：</span></div>
+					<div class="col-xs-1 houseprice">
+						<input type="text"> 元/月
+					</div>
+					<div class="col-xs-2 pay">
+						<ul class="selectpaytype">
+							<li class="text">选择付款方式</li>
+							<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+						</ul>
+						<ul class="paytype">
+							<li><a href="#">月付</a></li>
+							<li><a href="#">季付</a></li>
+							<li><a href="#">半年付</a></li>
+							<li><a href="#">年付</a></li>
+							<li><a href="#">面议</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-1  col-xs-offset-1 floor"><span>*</span><span>楼层：</span></div>
+					<div class="col-xs-3 housetype">
+						第 <input type="text" class="currentfloor"> 层
+						共 <input type="text" class="totalfloor"> 层
+					</div>
+				</div>
+
+				<!-- decoration -->
+				<div class="row">
+					<div class="col-xs-1  col-xs-offset-1"><span>*</span><span>房屋状况：</span></div>
+					<div class="col-xs-2 housestate">
+						<ul class="selectdecration">
+							<li class="text">请选择装修</li>
+							<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+						</ul>
+						<ul class="statetype">
+							<li><a href="#">毛胚</a></li>
+							<li><a href="#">简装</a></li>
+							<li><a href="#">精装</a></li>
+							<li><a href="#">豪华装</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-2 housedicr">
+						<ul class="selectdicr">
+							<li class="text">请选择朝向</li>
+							<li><i class="icon iconfont icon-35_xiangxiajiantou"></i></li>
+						</ul>
+						<ul class="dicrtype">
+							<li><a href="#">南</a></li>
+							<li><a href="#">西南</a></li>
+							<li><a href="#">东</a></li>
+							<li><a href="#">东南</a></li>
+							<li><a href="#">北</a></li>
+							<li><a href="#">东北</a></li>
+							<li><a href="#">西</a></li>
+							<li><a href="#">西北</a></li>
+
+						</ul>
+					</div>
+				</div>
+
+				<!-- title -->
+				<div class="row title">
+					<div class="col-xs-1 col-xs-offset-1">
+						<span>*</span><span>标题：</span>
+					</div>
+					<div class="col-xs-4">
+						<input type="text">
+					</div>
+				</div>
+
+				<!-- house configure -->
+				<div class="row">
+					<div class="col-xs-1 col-xs-offset-1">
+						<span>*</span><span>房屋配套：</span>
+					</div>
+					<div class="col-xs-8">
+						<ul class="housecontainer">
+							<li>
+								<input type="checkbox" data-item="床"> 床
+							</li>
+							<li>
+								<input type="checkbox" data-item="冰箱"> 冰箱
+							</li>
+							<li>
+								<input type="checkbox" data-item="电视"> 电视
+							</li>
+							<li>
+								<input type="checkbox" data-item="空调"> 空调
+							</li>
+							<li>
+								<input type="checkbox" data-item="洗衣机"> 洗衣机
+							</li>
+							<li>
+								<input type="checkbox" data-item="热水器"> 热水器
+							</li>
+							<li>
+								<input type="checkbox" data-item="家具"> 家具
+							</li>
+							<li>
+								<input type="checkbox" data-item="宽带"> 宽带
+							</li>
+							<li>
+								<input type="checkbox" data-item="可做饭"> 可做饭
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- details -->
+				<div class="row detailIntroduce">
+					<div class="col-xs-1 col-xs-offset-1">
+						<span>*</span><span>详细介绍：</span>
+					</div>
+					<div class="col-xs-1">
+						<textarea rows="6" cols="125" id="details"></textarea>
+					</div>
+					
+				</div>
+
+				<!-- housepicture -->
+
+				<div class="row">
+					<div class="col-xs-1 col-xs-offset-1">
+						<span></span><span>上传房源图：</span>
+					</div>
+					<div class="col-xs-10 imgs">
+						<img src="./imgs/add.png" id="showImg" onclick="openFiles()">
+						<input type="file" id="files" style="display: none"  multiple="true">
+					</div>
+				</div>
+			<div class="ownerinfo col-xs-10 col-xs-offset-1">
+				<!-- houseowner -->
+				<div class="row people">
+					<div class="col-xs-1">
+						<span>*</span><span>联系人：</span>
+					</div>
+					<div class="col-xs-4">
+						<input type="text" class="linkman">
+					</div>
+				</div>
+
+				<!-- tel -->
+				<div class="row phone">
+					<div class="col-xs-1">
+						<span>*</span><span>手机号码：</span>
+					</div>
+					<div class="col-xs-4">
+						<input type="text" id="phone">
+					</div>
+				</div>
+
+				<!-- code -->
+				<div class="row code">
+					<div class="col-xs-1">
+						<span>*</span><span>验证码：</span>
+					</div>
+					<div class="col-xs-2">
+						<input type="text" class="aaa">
+					</div>
+					<div class="col-xs-1">
+						<img src="" class="code-img" style="width:100px;height:30px" onclick="getCodeImage()">
+					</div>
+				</div>
+			</div>
+
+			<!-- submit -->
+			<div class="row bott">
+				<div class="col-xs-4 col-xs-offset-4">
+					<button type="button" class="btn">确认修改</button>
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+.body{
+	background-color:#f1f1f1;
+	padding-top:25px;
+	height:100%;
+}
+.choosed{
+	background: lightgray;
+}
+.active{
+	color:#3fac6b!important;
+}
+.typecontent{
+	width:100%;
+	margin-top: 20px;
+}
+.typecontent .container{
+	background: white;
+}
+.content-top{
+	height:48px;
+	border-bottom: 2px solid #3fac6b;
+}
+.content-top div{
+	height:48px;
+	line-height: 48px;
+}
+.allHouse {
+	background: #3fac6b;
+}
+.allHouse a{
+	font-size: 16px;
+	color:white;
+	background: #3fac6b;
+}
+.underHouse a{
+	font-size: 16px;
+	color:black;
+}
+
+.content-top div:last-child {
+	font-size:12px;
+	font-weight: 600;
+	color:#3fac6b;
+}
+
+.typeList ul{
+	display: flex;
+	list-style: none;
+	width:100%;
+	height:20px;
+	margin-top: 20px;
+}
+.typeList ul li{
+	padding:0 8px;
+}
+.typeList ul li:first-child{
+	font-weight: 600;
+}
+.typeList ul li a{
+	color:black;
+}
+.typeList ul li a:hover{
+	color:#3fac6b;
+}
+.price input,.areas input{
+	width:30px;
+	height:20px;
+	outline: none;
+	text-indent: 8px;
+}
+.condition{
+	display: none;
+}
+.moretype{
+	margin-top:20px;
+}
+.moretype>ul{
+	width:100%;
+	height:48px;
+	background:#fbfbfb;
+	list-style: none;
+	margin-bottom:0;
+	border-top:1px solid lightgray;
+}
+.moretype>.sort>li{
+	height:100%;
+	line-height: 48px;
+	padding:0 10px;
+	float:left;
+}
+.moretype>ul>li:first-child{
+	font-weight: 600;
+}
+.moretype a{
+	color:black;
+}
+.moretype>.sort>.sort-item:hover{
+	background: #ebe9e9;
+}
+.moretype a:hover{
+	text-decoration: none;
+	color:black;
+}
+.moretype>.filter>li:first-child{
+	width:65px;
+	height:25px;
+	line-height: 25px;
+	float:left;
+	margin-top: 11px;
+	padding-left: 8px;
+}
+.moretype>.filter>.choose{
+	width:90px;
+	height:25px;
+	line-height: 25px;
+	float:left;
+	margin-top: 11px;
+	padding-left: 8px;
+
+}
+.moretype>.filter>.choose i{
+	float:right;
+}
+.moretype>.filter>.check{
+	padding:0 28px;
+	height:25px;
+	line-height: 25px;
+	float:left;
+	margin-top: 11px;
+	padding-left: 8px;
+}
+.choose ul{
+	list-style: none;
+
+}
+.choose{
+	background: white;
+	border:1px solid #e0e0e0;
+	margin-right: 10px;
+}
+.hid{
+	display: none;
+	width:90px;
+	padding-left: 8px;
+	position: relative;
+	left:-9px;
+	top:-1px;
+	z-index: 99;
+
+}
+.hid li:hover{
+	background: #eeeded;
+}
+.choose:hover .hid{
+	display:block;
+	border:1px solid #e0e0e0;
+	border-top:0px solid #e0e0e0;
+	background: white;
+}
+ .houseList .container{
+ 	margin-top: 20px;
+	background-color:white;
+	padding-top:10px;
+
+} 
+.houseList .totalnum{
+	width:100%;
+	height:50px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.houseList .totalnum p{
+	text-align: right;
+}
+.houseList .totalnum p span{
+	color:#e13641;
+	font-size: 22px;
+}
+.houseList .detailList{
+	width:100%;
+	height:170px;
+	padding:24px 0px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.houseList .detailList img{
+	width:auto;
+	max-width: 100%;
+	height: 100%;
+}
+.detailList .houseInfo{
+	height:127px;
+	line-height: 22px;
+	font-size: 14px;
+
+}
+.detailList .houseInfo p a{
+	color:black;
+}
+.detailList .houseInfo p:first-child a{
+	color:#269de6;
+	font-size: 20px;
+	font-weight: 600;
+	text-decoration: none;
+}
+.detailList .houseInfo p:nth-child(2){
+	font-weight: 600;
+	color:black;
+}
+.detailList .houseInfo p:nth-child(3),.detailList .houseInfo p:nth-child(3) a{
+	color:gray;
+}
+.detailList .houseInfo p:last-child span{
+	border:1px solid #83a1ba;
+	margin-right: 10px;
+	display: inline-block;
+	padding:2px 5px;
+	color:#83a1ba;
+}
+.detailList .housePrice,.detailList .peopleNum{
+	height:54px;
+	line-height: 18px;
+	margin-top: 30px;
+}
+.detailList .housePrice p span:first-child{
+	font-size:32px;
+}
+.detailList .housePrice p span{
+	color:#e13641;
+}
+.detailList .peopleNum span{
+	font-weight: 600;
+	font-size:16px;
+}
+
+.page{
+	text-align: center;
+}
+.img-item{
+	height:100%;
+	text-align: center;
+}

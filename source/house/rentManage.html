@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>房源管理</title>
+	<link rel="icon" type="image/png" href="./imgs/favicon.png">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./css/rentManage.css">
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script src="./js/template.js"></script>
+	<script src="./js/bootstrap-paginator.js"></script>
+	<script src="./js/bootstrap-mypaginator.js"></script>
+	<script src="./js/rentManage.js"></script>
+</head>
+<body>
+	<!-- nav -->
+	<div class="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="row">
+						<div class="col-xs-7"><img src="./imgs/logo.png"></div>
+						<div class="col-xs-5">网博</div>
+					</div>				
+				</div>
+				<div class="col-xs-1"><a href="./index.html">租房</a></div>
+				<div class="col-xs-1 housemana">
+					<a href="./houseRent.html">发布房源</a>
+				</div>
+				<div class="col-xs-1 selected"><a href="./rentManage.html">房源管理</a></div>
+				<div class="col-xs-2  col-xs-offset-4">
+					<span><a href="#" data-toggle="modal" data-target="#regist" class="nickName"></a>|</span>
+					<span><a href="#" data-toggle="modal" data-target="#login" class="log"> 退出</a></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="body">
+		<div class="container">
+			<div class="row">
+				<!-- left -->
+				<div class="col-xs-2 left">
+					<div class="row">
+						<div class="col-xs-12">
+							<img src="./imgs/head.jpg">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">欢迎你，<span class="nickName"></span></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 myRent select" id="rightContent"><a href="#">我的发布</a></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 myMessage" id="rightMessage"><a href="#">我的消息</a></div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 myInfo" id="rightInfo"><a href="#">编辑资料</a></div>
+					</div>
+				</div>
+				<!-- right -->
+				<div class="col-xs-9 right">
+
+					<!-- myrenthouse -->
+					<div class="rightContent">
+						<script id="myrent" type="text/html">
+							<div class="row">
+								<div class="col-xs-12 title">
+									我的发布
+								</div>
+							</div>
+							{{each sources as i}}
+							<div class="row">
+								<div class="col-xs-3 houseImg">
+									<img src="{{commonurlimg+i.images[0].path}}">
+								</div>
+								<div class="col-xs-5 houseInfo">
+									<p>
+										<span>{{i.communityName}}</span> |
+										<span>{{i.houseType[0]}}室{{i.houseType[1]}}厅</span> |
+										<span>{{i.acreage}}平方米</span> |
+										<span>{{i.rent}}</span>元/月
+									</p>
+									<p>
+										{{i.createTime}}发布
+									</p>
+								</div>
+								<div class="col-xs-2 col-xs-offset-2 operation">
+									<p  class="{{i.id}}" id="modify"><a href="#" onclick="modify({{i.id}})">修改</a></p>
+									<p id="{{i.id}}"><a href="#" class="delete" onclick="del({{i.id}})">删除</a></p>
+								</div>
+							</div>
+							{{/each}}
+							<div style="text-align: center;">
+								<ul id="myPages" ></ul>
+							</div>
+						</script>
+
+					</div>
+					
+					<!-- mymessage -->
+					<div class="rightMessage">
+						<div class="row">
+							<div class="col-xs-12 title">
+								我的消息
+							</div>
+						</div>
+					</div>
+
+					<!-- myInfo -->
+					<div class="rightInfo">
+						<form  action="" method="post" enctype="multipart/form-data">
+							<div class="row">
+								<div class="col-xs-12 title">
+									我的账户信息
+								</div>
+							</div>
+							<div class="row topoptions">
+								<div class="col-xs-2 chose" id="ownerImg">上传头像</div>
+								<div class="col-xs-2" id="ownerName">修改昵称</div>
+								<div class="col-xs-2" id="ownerPassword">修改密码</div>
+							</div>
+							<div class="row hid">
+								<!-- ownerImg -->
+								<div class="row ownerImg">
+									<div class="col-xs-8">
+										<input type="button" onclick="openFile()" value="选择图片">
+										<input type="file" id="file" style="display: none">
+										<img src="./imgs/head.jpg" id="showImg">
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<!-- ownerName -->
+								<div class="row ownerName">
+									<div class="col-xs-12">
+										设置昵称：<input type="text" id="nickName">
+									</div>
+									<div class="col-xs-2 col-xs-offset-4 point">
+										
+									</div>
+									<div class="col-xs-12 save">
+										<button type="button" class="savenickname">保存修改</button>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<!-- ownerPassword -->
+								<div class="row ownerPassword">
+									<div class="col-xs-12">
+										输入旧密码：<input type="password" id="oldPassword">
+										<div class="pass"></div>
+									</div>
+									<div class="col-xs-12">
+										设置新密码：<input type="password" id="newPassword">
+										<div class="pass"></div>
+									</div>
+									<div class="col-xs-12">
+										确认新密码：<input type="password" id="rePassword">
+										<div class="pass"></div>
+									</div>
+									<div class="col-xs-4 col-xs-offset-4 save">
+										<button type="button" class="savepassword">保存修改</button>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+								<div style="clear:both"></div>
+							</div>
+							<div style="clear:both"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			
+	</div>
+</body>
+</html>

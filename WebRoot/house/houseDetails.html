@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="icon" type="image/png" href="./imgs/favicon.png">
+	<link rel="stylesheet" type="text/css" href="./css/swiper.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./css/login-regist.css">
+	<link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./css/houseDetails.css">
+	<script src="./js/swiper.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script src="./js/login-regist.js"></script>
+	<script src="./js/houseDetails.js"></script>
+</head>
+<body>
+	<!-- nav -->
+	<div class="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="row">
+						<div class="col-xs-7"><img src="./imgs/logo.png"></div>
+						<div class="col-xs-5">网博</div>
+					</div>				
+				</div>
+				<div class="col-xs-1"><a href="./index.html">租房</a></div>
+				<div class="col-xs-1 housemana">
+					<a href="#" onclick="houserent()">发布房源</a>
+				</div>
+				<div class="col-xs-1"><a href="#" onclick="houseManage()">房源管理</a></div>
+				<div class="col-xs-2  col-xs-offset-4">
+					<span class="regi"><a href="#" data-toggle="modal" data-target="#regist">注册</a> |</span>
+					<span class="log"><a href="#" data-toggle="modal" data-target="#login"> 登录</a></span>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- regist -->
+	<div class="modal fade" id="regist" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  		<div class="modal-dialog modal-md" role="document">
+    		<div class="modal-content">
+        			<div class="modal-header row">
+        				 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			</div>
+        			<div class="row">
+          				<div class="col-xs-4 regPhone  col-xs-offset-1">手机号码注册</div>
+          				<div class="col-xs-4 col-xs-offset-3"><span>已有账号？</span><a href="#"  data-toggle="modal" data-target="#login" onclick="login()">去登录</a></div>
+        			</div>
+      			<div class="modal-body">        			
+        			<div class="row">
+          				<div class="col-xs-10 col-xs-offset-1"><input type="text" name="phonenumber" placeholder="请输入手机号" id="phone"></div>
+         			</div>
+         			<div class="row">
+          				<div class="col-xs-7 col-xs-offset-1"><input type="text" name="phonenumber" placeholder="请输入验证码"></div>
+          				<img class="code-img" src="">
+         			</div>
+         			<div class="row">
+          				<div class="col-xs-10 col-xs-offset-1"><input type="password" name="password" placeholder="请输入密码（最少8位，数字+字母）"  id="password"></div>
+         			</div>
+         			<div class="row">
+         				<div class="col-xs-10 col-xs-offset-1">
+          					<button type="button" class="btn reg">注 册</button>
+          				</div>
+         			</div>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+		<!-- login -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  		<div class="modal-dialog modal-md" role="document">
+    		<div class="modal-content">
+        			<div class="modal-header row">
+        				 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			</div>
+        			<div class="row">
+          				<div class="col-xs-4 regPhone  col-xs-offset-1">账号密码登录</div>
+          				<div class="col-xs-4 col-xs-offset-3"><span>没有账号？</span><a href="#"  data-toggle="modal" data-target="#regist" onclick="regist()">去注册</a></div>
+        			</div>
+	      			<div class="modal-body">        			
+	        			<div class="row">
+	          				<div class="col-xs-10 col-xs-offset-1"><input type="text" name="phonenumber" placeholder="请输入手机号" id="userphone"></div>
+	         			</div>
+	         			<div class="row">
+	          				<div class="col-xs-10 col-xs-offset-1"><input type="password" name="password" placeholder="请输入登录密码" id="userpassword"></div>
+	         			</div>
+	         			<div class="row">
+	         				<div class="col-xs-10 col-xs-offset-1">
+	          					<button type="button" class="btn login">登 录</button>
+	          				</div>
+	         			</div>
+	      			</div>
+    		</div>
+  		</div>
+	</div>
+
+	<!-- houseDetail -->
+	<div class="houseDetail body">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3 title"><span class="communityName"></span><span><i class="shi"></i>室<i class="ting"></i>厅<i class="wei"></i>卫</span><span class="acreage">18</span>平米</div>
+			</div>
+			<div class="row">
+				<!-- swiper -->
+				<div class="col-xs-4 houseImg">
+					<!-- toppicture -->
+					<div class="swiper-container gallery-top">
+						<div class="swiper-wrapper" id="top">
+						</div>
+						<div class="swiper-button-prev swiper-button-white"></div>
+						<div class="swiper-button-next swiper-button-white"></div>
+					</div>	
+					<!-- bottompicture -->
+					<div class="swiper-container gallery-thumbs">
+						<div class="swiper-wrapper" id="bottom">
+							
+						</div>
+					</div>
+				</div>
+				<!-- houseinfo -->
+				<div class="col-xs-5 houseInfo">
+					<p>
+						<span>价格：</span>
+						<span class="price"></span> 元/月
+					</p>
+					<p>
+						<span>面积：</span>
+						<span class="acreage"></span>平米<span class="others"></span>
+					</p>
+					<p>
+						<span>装修：</span>
+						<span class="houseState">精装</span>
+					</p>
+					<p>
+						<span>户型：</span>
+						<span><i class="shi"></i>室<i class="ting"></i>厅</span>
+					</p>
+					<p>
+						<span>楼层：</span>
+						<span class="currentfloor">18</span class="totalfloor">/<span>28</span>
+					</p>
+					<p>
+						<span>区域：</span>
+						<span class="areaname"></span>
+					</p>
+					<p>
+						<span>小区：</span>
+						<span class="communityName"></span> <span><a href="./index.html">更多租房>></a></span>
+					</p>
+					<p>
+						<span>更新时间：</span>
+						<span class="updatetime"></span>
+					</p>
+				</div>
+				<!-- houseowner -->
+				<div class="col-xs-3 houseowner">
+					<div class="ownerpicture">
+						<img src="">
+					</div>
+					<div class="owner">
+						<p class="ownername"></p>
+						<p class="ownertel"><i class="icon iconfont icon-filedicon_phone_gre"></i><span class="phone"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- otherInfo -->
+		<div class="container">
+			<div class="row top">
+				<div class="col-xs-1 info">房源信息</div>
+				<div class="col-xs-1 picture"><a href="#picture">房源照片</a></div>
+			</div>
+			<div class="houseContainer">
+				<div class="row">
+					<div  class="col-xs-12 info">房源信息</div>
+				</div>
+				<div class="row">
+					<div  class="col-xs-6 houseSetting">
+						<ul class="equips">
+						</ul>
+					</div>
+					<div class="col-xs-6 brief">
+						
+					</div>
+				</div>
+				<!-- housepicture -->
+				<div class="row">
+					<div  class="col-xs-12 picture" id="picture">室内图</div>
+				</div>
+				<div class="row detailpicture">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+transaction=com.itany.jdbc.transaction.impl.TransactionManagerImpl
+userDao=com.itany.rent.dao.impl.UserDaoImpl
+userServiceTarget=com.itany.rent.service.impl.UserServiceImpl
+userService=com.itany.rent.service.proxy.UserServiceProxy

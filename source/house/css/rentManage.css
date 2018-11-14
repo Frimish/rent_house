@@ -1,0 +1,146 @@
+.body{
+	background-color:#f1f1f1;
+	padding-top:25px;
+	height:100%;
+}
+.left{
+	height:600px;
+	background: white;
+	padding-top: 60px;
+	margin-top: 20px;
+}
+.left .row img{
+	width:80%;
+	height:115px;
+}
+.right{
+	height:700px;
+	background: white;
+	margin-left: 35px;
+	margin-top: 20px;
+}
+.body .row .row{
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+}
+.left{
+	height:500px;
+}
+.left .row:first-child{
+	height:88px;
+}
+.body a{
+	color:black;
+}
+.select{
+	background: #3fac6b;
+} 
+.myRent a{
+	color:white;
+}
+.right{
+	padding-top: 20px;
+}
+.right>div{
+	width:100%;
+}
+.right .houseImg img{
+	width:90%;
+	height:140px;
+}
+.right .title{
+	height:39px;
+	background: #f1f1f1;
+	text-align: left;
+	font-weight: 600;
+	font-size: 16px;
+}
+.right .rightContent .row:nth-child(2){
+	padding:10px 0;
+	margin-top: 10px;
+	height:162px;
+	border-bottom:1px solid lightgray;
+	box-sizing: border-box;
+}
+.right .houseImg{
+	padding-left: 0;
+}
+.right .houseInfo{
+	padding-top: 6px;
+	text-align: left;
+	line-height: 60px;
+}
+.right .houseInfo p span:last-child{
+	color:#e13641;
+}
+.right .operation{
+	padding-top: 18px;
+	line-height: 50px;
+}
+.right .operation a{
+	color:#3fac6b;
+}
+.rightMessage,.rightInfo{
+	display: none;
+}
+.rightInfo{
+	height:360px;
+}
+.topoptions{
+	height:30px;
+	background:#f1f1f1;
+	margin-top: 20px;
+}
+.chose{
+	background: lightgray;
+}
+.ownerImg input{
+	width:120px;
+	background: #3fac6b;
+	color:white;
+}
+.ownerImg img{
+	margin-top: 20px;
+	margin-left: 100px;
+	width:225px;
+	height:221px;
+}
+.ownerImg{
+	width:100%;
+}
+.ownerName,.ownerPassword{
+	display: none;
+}
+.ownerName,.ownerPassword{
+	padding-top: 100px;
+}
+.ownerName input,.ownerPassword input{
+	width:250px;
+}
+.ownerName .save,.ownerPassword .save{
+	margin-top: 40px;
+}
+.ownerName button,.ownerPassword button{
+	width:250px;
+	color:white;
+	background: #3fac6b;
+}
+.ownerName button{
+	position: relative;
+	left:32px;
+}
+.ownerPassword div{
+	margin-bottom: 15px;
+}
+.ownerPassword button{
+	position: relative;
+	left:42px;
+}
+.point{
+   position: relative;
+   left:14px;
+}
+.pass{
+	margin-top: 10px;
+}

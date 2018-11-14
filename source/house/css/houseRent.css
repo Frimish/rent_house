@@ -1,0 +1,251 @@
+.houseRent{
+	height:100px;
+	background: #f1f1f1;
+}
+.houseRent .title{
+	width:100%;
+	height:120px;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 600;
+	padding-top: 40px;
+}
+.detailInfo{
+	padding-top: 20px;
+	font-size: 14px;
+}
+span:first-child{
+	color:red;
+}
+.detailInfo .row{
+	margin-top: 10px;
+}
+.detailInfo .row div{
+	padding-left: 0px;
+}
+.detailInfo .row div:first-child,.detailInfo .row div:nth-child(3){
+	text-align: right;
+}
+.area ul:first-child,.bk ul:first-child{
+	list-style: none;
+	display: flex;
+	border: 1px solid lightgray;
+	width:100%;
+	background: #f1f1f1;
+}
+.area .selectarea .text,.bk .selectarea .text{
+	width:80%;
+	padding:2px 5px;
+}
+.detail>ul:first-child{
+	list-style: none;
+	display: flex;
+	border: 1px solid lightgray;
+	width:100%;
+	background: #f1f1f1;
+}
+.dis{
+	list-style: none;
+	width:80px;
+	height:150px;
+	overflow-y: scroll;
+	z-index:99;
+	display: none;
+	position: absolute;
+	background: white;
+	
+}
+
+.dis li,.hid li{
+	padding:2px 5px;
+}
+.area:hover .dis{
+	display: inline-block;
+}
+a{
+	color:gray;
+}
+.dis li:hover{
+	background: #3fac6b;
+}
+.dis li:hover a{
+	color:white;
+}
+
+
+.hid{
+	list-style: none;
+	width:80px;
+	height:150px;
+	overflow-y: scroll;
+	z-index:99;
+	display: none;
+	position: absolute;
+	background: white;
+	
+}
+
+.hid li,.hid li{
+	padding:2px 5px;
+}
+.bk:hover .hid{
+	display: inline-block;
+}
+a{
+	color:gray;
+}
+.hid li:hover{
+	background: #3fac6b;
+}
+.hid li:hover a{
+	color:white;
+}
+.bankuai{
+	padding-left: 5px;
+	height:26px;
+	line-height: 26px;
+}
+.bankuai li:first-child{
+	width:60px;
+	/*margin-right: 33px;*/
+}
+.doorplate input{
+	width:50px;
+	text-indent: 20px;
+	outline: none;
+}
+.selecttype .text,.selectpaytype .text,.selectdicr .text,.selectdecration .text{
+	width:80%;
+	padding:2px 5px;
+}
+.selecttype, .renttype,.selectpaytype,.paytype{
+	width:120px;
+	list-style: none;
+	border: 1px solid lightgray;
+}
+.selecttype,.selectpaytype,.selectdecration,.selectdicr{
+	display: flex;
+	background: #f1f1f1;
+}
+.rent:hover .renttype,.housestate:hover .statetype{
+	display: inline-block;
+}
+.pay:hover .paytype,.housedicr:hover .dicrtype{
+	display: inline;
+	left:0px;
+}
+.renttype,.paytype,.statetype,.dicrtype{
+	margin-top: -10px;
+	display: none;
+	position: absolute;
+	z-index: 99;
+	background: white;
+}
+.renttype li:hover,.paytype li:hover,.statetype li:hover,.dicrtype li:hover{
+
+	background:#3fac6b;
+}
+.renttype li:hover a,.paytype li:hover a,,.statetype li:hover a,.dicrtype li:hover a{
+	color:white;
+}
+.housetype input{
+	width:50px;
+	text-indent: 20px;
+	outline: none;
+}
+.houseareas input{
+	width:100px;
+	text-indent: 20px;
+	outline: none;
+}
+.houseprice input{
+	width:49px;
+	text-indent: 10px;
+	outline: none;
+}
+.selectpaytype,.paytype,.selectdicr,.dicrtype{
+	text-align: left;
+}
+.floor{
+	text-align: right;
+}
+.selectdecration,.statetype,.selectdicr,.dicrtype{
+	width:130px;
+	list-style: none;
+	border: 1px solid lightgray;
+}
+.housecontainer{
+	height:20px;
+	font-size: 14px;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+.housecontainer li{
+	height:28px;
+	line-height: 28px;
+	padding:0px 20px;
+}
+.housecontainer input{
+	position: relative;
+	top: 2px;
+}
+.detailIntroduce{
+	margin-top: 30px!important;
+}
+textarea{
+	outline: none;
+}
+.title input,.people input,.phone input{
+	width:220px;
+}
+.code input{
+	width:150px;
+}
+.codenum{
+	width:100px;
+	height:30px;
+	border:1px solid lightgray;
+}
+input[type="text"]{
+	outline: none;
+	height:28px;
+}
+img{
+	width:150px;
+	height:160px;
+	margin-right: 10px;
+};
+.ownerinfo{
+	margin-top: 20px;
+	padding:20px 10px;
+	background: #f1f1f1;
+}
+.btn{
+	color:white;
+	font-size: 16px;
+	font-weight: 600;
+	width:100%;
+	height:40px;
+	background: #3fac6b;
+}
+.botton{
+	margin-top: 240px!important;
+	margin-bottom: 100px!important;
+}
+.bott{
+	margin-top: 240px!important;
+	margin-bottom: 100px!important;
+}
+.img-item{
+	    width: 190px;
+    height: 160px;
+	float:left;
+	padding-right: 10px;
+}
+.times{
+	position: relative;
+	top:-68px;
+	left:-28px;
+	font-size: 20px;
+}

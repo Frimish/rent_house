@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <script type="./js/jquery.min.js"></script> -->
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// var a = $("#cc").serialize();
+			
+		})
+		function test() {
+			var a = new FormData($("#form1")[0])
+	        $.ajax({
+	             url: "http://localhost:8080/rentHouse/houseInfo/ssss",
+	             type: "POST",
+	             // dataType:"jsonp",
+	             data: a,
+	             processData: false,  // 告诉jQuery不要去处理发送的数据
+	             contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+	             success: function(response,status,xhr){
+	                console.log(xhr);
+	               
+	             }
+	        });
+		}
+	</script>
+</head>
+<body>
+	<form name="form1" id="form1">  
+        <p>name:<input type="text" name="name" /></p>  
+        <p>gender:<input type="radio" name="gender" value="1" />male <input type="radio" name="gender" value="2" />female</p>
+        <p>stu-number：<input type="text" name="number" /></p>  
+        <p>photo:<input type="file" name="photo" id="photo"></p>  
+        <p><input type="button" name="b1" value="submit" onclick="test()" /></p>  
+</form> 
+</body>
+</html>
